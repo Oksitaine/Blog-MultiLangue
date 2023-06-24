@@ -231,7 +231,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/about/page:static/chunks/app/about/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -239,7 +239,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/about/page:static/chunks/app/about/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     }
@@ -256,10 +256,6 @@
       "files": [
         "static/css/app/layout.css"
       ]
-    },
-    "/Users/wglint/Desktop/NextJS/my-app/src/app/about/page": {
-      "modules": [],
-      "files": []
     }
   }
 }
