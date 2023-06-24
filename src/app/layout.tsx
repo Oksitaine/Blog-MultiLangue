@@ -11,7 +11,6 @@ export default function RootLayout({
     <html lang="en">
       <body >
         {children}
-        <div>layout je suis partout</div>
       </body>
     </html>
   )
