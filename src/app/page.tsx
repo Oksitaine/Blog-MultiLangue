@@ -4,9 +4,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-   <main>
+   <main className="h-[3000px]">
     <h1>Home</h1>
-    <Link href="/about">About</Link>
    </main>
   )
 }
