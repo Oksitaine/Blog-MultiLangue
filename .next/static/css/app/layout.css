@@ -561,6 +561,11 @@ video {
 .gap-1 {
   gap: 0.25rem;
 }
+.space-y-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
 .rounded {
   border-radius: 0.25rem;
 }
@@ -633,6 +638,9 @@ video {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+.pt-10 {
+  padding-top: 2.5rem;
 }
 .text-3xl {
   font-size: 1.875rem;
