@@ -9,16 +9,15 @@ export interface SiteConfig {
     }
 }
 
-
-const siteConfig = {
+const siteConfig: SiteConfig = {
     siteName: "EL MEDIRI Azdin",
     description: 
         "AI, mathematics, web... everything is in this blog",
     currentAt: "France",
     socialLinks : {
-        twitter : "",
-        github : "",
-        linkedin : ""
+        twitter : "https://twitter.com/Azdinmediri",
+        github : "https://github.com/WGlint",
+        linkedin : "https://www.linkedin.com/in/azdin-el-mediri-447109262/"
     }
 }
 
