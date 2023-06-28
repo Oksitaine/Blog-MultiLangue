@@ -522,6 +522,9 @@ video {
 .h-2 {
   height: 0.5rem;
 }
+.h-auto {
+  height: auto;
+}
 .w-full {
   width: 100%;
 }
@@ -554,6 +557,9 @@ video {
 }
 .gap-2 {
   gap: 0.5rem;
+}
+.gap-1 {
+  gap: 0.25rem;
 }
 .rounded {
   border-radius: 0.25rem;
@@ -653,6 +659,10 @@ video {
 .text-neutral-400 {
   --tw-text-opacity: 1;
   color: rgb(163 163 163 / var(--tw-text-opacity));
+}
+.text-neutral-600 {
+  --tw-text-opacity: 1;
+  color: rgb(82 82 82 / var(--tw-text-opacity));
 }
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
