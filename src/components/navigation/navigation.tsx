@@ -5,7 +5,7 @@ import PaddinContainer from "../layouts/padding-container";
 export default function Navigation(){
 
     return (
-        <div className="border-b sticky top-0 left-0 right-0 bg-white bg-opacity-50 backdrop-blur-md">
+        <div className="border-b sticky top-0 left-0 right-0 bg-white bg-opacity-50 backdrop-blur-md z-50">
             <PaddinContainer>
                 <div className="py-5 flex items-center justify-between">
                     <Link className="font-bold test-lg" href="/" >Explorer</Link>
