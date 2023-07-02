@@ -38,6 +38,44 @@ export const DUMMY_DATA : Post[] = [
         body: "Come her for make money with AIIII and buy a new car and a new house and a new wife and a new life",
         created_at: "2021-08-01T12:00:00.000Z",
         updated_at: "2021-08-01T12:00:00.000Z"
+    },
+    {
+        id: "3",
+        title : "Make business with MAGIC",
+        description : "Come her for make money with MAGIC and buy a new car and a new house and a new wife and a new life",
+        category: {
+            id: "3",
+            title: "Business"
+        },
+        author: {
+            id: "3",
+            first_name: "EL MEDIRI ",
+            last_name: "Azdin",
+        },
+        slug: "first-meetup",
+        image: "https://img.freepik.com/photos-gratuite/fond-aurore-boreale-colore-vibrant-ideal-pour-papier-peint_181624-60919.jpg?w=1380&t=st=1688289815~exp=1688290415~hmac=02819ac0b65fb1520477152646a9988418bdd1aa67cd08f11471048368e16c92",
+        body: "Come her for make money with MAGIC and buy a new car and a new house and a new wife and a new life",
+        created_at: "2021-08-01T12:00:00.000Z",
+        updated_at: "2021-08-01T12:00:00.000Z"
+    },
+    {
+        id: "4",
+        title : "Come get beautiful Picture with AI",
+        description : "Come make best profil picture with AI and buy a new car and a new house and a new wife and a new life",
+        category: {
+            id: "4",
+            title: "Business"
+        },
+        author: {
+            id: "4",
+            first_name: "EL MEDIRI ",
+            last_name: "Azdin",
+        },
+        slug: "first-meetup",
+        image: "https://img.freepik.com/photos-gratuite/materiel-eclairage-professionnel-plateau-tournage-fumee-dans-air_1268-17216.jpg?w=1380&t=st=1688289911~exp=1688290511~hmac=f47b1d378afa4d5bf0bff19bae7857b5f8b6102ed93e594275933c754d6948ac",
+        body: "Come her for make money with MAGIC and buy a new car and a new house and a new wife and a new life",
+        created_at: "2021-08-01T12:00:00.000Z",
+        updated_at: "2021-08-01T12:00:00.000Z"
     }
 ]
 

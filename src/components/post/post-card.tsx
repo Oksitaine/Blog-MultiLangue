@@ -6,10 +6,11 @@ import { Layout } from "lucide-react"
 
 interface PostProps {
     post: Post,
-    layout?: "vertical" | "horizontal"
+    layout?: "vertical" | "horizontal",
+    reverse?: boolean
 }
 
-export default function PostCard({post, layout = "horizontal"}: PostProps){
+export default function PostCard({post, layout = "horizontal", reverse = false}: PostProps){
 
     return (
         <Link 
@@ -22,7 +23,7 @@ export default function PostCard({post, layout = "horizontal"}: PostProps){
                 }
             `}>
                 <Image 
-                    className="rounded-md w-full object-cover object-center max-h-[300px]" 
+                    className={`rounded-md w-full object-cover object-center max-h-[300px] ${ reverse ? "order-last" : "" } `} 
                     src={post.image} 
                     width={600} 
                     height={300} 
