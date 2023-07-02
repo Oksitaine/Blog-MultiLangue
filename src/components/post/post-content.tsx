@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Post } from "../../../types/collextion";
+import { getReadingTime, getRealiveDate } from "../../../lib/helpers";
 
 interface PostContentProps {
     post: Post,
@@ -18,9 +19,9 @@ export default function PostContent({post} : PostContentProps){
                 <CircleCategorie/>
                 <div>{`${post.author.first_name} ${post.author.last_name}`}</div>
                 <CircleCategorie/>
-                <div>1 min read</div>
+                <div>{getReadingTime(post.body)}</div>
                 <CircleCategorie/>
-                <div>1 mouth ago</div>
+                <div>{getRealiveDate(post.created_at)}</div>
             </div>
             <h2 className="font-medium text-3xl" >{post.title}</h2>
             <p className="leading-snug text-neutral-600">{post.description}</p>
