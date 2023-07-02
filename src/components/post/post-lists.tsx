@@ -3,7 +3,7 @@ import PostCard from "./post-card";
 
 interface PostListProps {
     posts: Post[];
-    layout: "vertical" | "horizontal";
+    layout?: "vertical" | "horizontal";
 }
 
 export default function PostlistProps({posts, layout = "vertical"} : PostListProps){

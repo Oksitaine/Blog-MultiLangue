@@ -13,10 +13,10 @@ export default function Navigation(){
                     <nav>
                         <ul className="flex items-center gap-4 text-neutral-500">
                             <li>
-                                <Link href="/cities">Cities</Link>
+                                <Link href="/coding">Coding</Link>
                             </li>
                             <li>
-                                <Link href="/experiences">Experiences</Link>
+                                <Link href="/business">Business</Link>
                             </li>
                         </ul>
                     </nav>

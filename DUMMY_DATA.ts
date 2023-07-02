@@ -85,5 +85,11 @@ export const DUMMY_CATEGORIES : Category[] = [
         title: "Coding",
         slug: "coding",
         description: "This is the coding category"
+    },
+    {
+        id: "2",
+        title: "Business",
+        slug: "business",
+        description: "This is the business category"
     }
 ]
