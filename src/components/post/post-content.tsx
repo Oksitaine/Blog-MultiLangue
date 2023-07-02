@@ -23,8 +23,8 @@ export default function PostContent({post} : PostContentProps){
                 <CircleCategorie/>
                 <div>{getRealiveDate(post.created_at)}</div>
             </div>
-            <h2 className="font-medium text-3xl" >{post.title}</h2>
-            <p className="leading-snug text-neutral-600">{post.description}</p>
+            <h2 className="font-medium @lg:text-3xl text-xl @md:text-2xl" >{post.title}</h2>
+            <p className="text-base @lg:text-lg leading-snug text-neutral-600">{post.description}</p>
             <div className="flex items-center gap-2 pt-2">Read More <ArrowRight size="14"/></div>
         </div>
     )

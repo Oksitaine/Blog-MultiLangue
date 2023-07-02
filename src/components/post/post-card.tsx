@@ -15,15 +15,15 @@ export default function PostCard({post, layout = "horizontal", reverse = false}:
     return (
         <Link 
             href={`/post/${post.slug}`} 
-            className={`
+            className={`@container
                 ${
                     layout === "horizontal" ?
-                    "grid grid-cols-2 gap-10 items-center" :
+                    "grid grid-cols-1 md:grid-cols-2 gap-10 items-center" :
                     "space-y-10"
                 }
             `}>
                 <Image 
-                    className={`rounded-md w-full object-cover object-center max-h-[300px] ${ reverse ? "order-last" : "" } `} 
+                    className={`rounded-md w-full object-cover object-center max-h-[300px] ${ reverse ? "md:order-last" : "" } `} 
                     src={post.image} 
                     width={600} 
                     height={300} 
