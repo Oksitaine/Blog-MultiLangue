@@ -15,7 +15,7 @@ export const DUMMY_DATA : Post[] = [
             last_name: "Doe",
         },
         slug: "first-meetup",
-        image: "https://picsum.photos/200/300",
+        image: "https://as2.ftcdn.net/v2/jpg/02/65/25/49/1000_F_265254915_RF3cCXrUXd752TlCE06GgXfLDpxxf5gx.jpg",
         body: "This is the first meetup body text content for the meetup with id 1 and slug first-meetup and title First Meetup",
         created_at: "2021-08-01T12:00:00.000Z",
         updated_at: "2021-08-01T12:00:00.000Z"

@@ -2,8 +2,17 @@ export interface Post {
     id: string;
     title: string;
     description: string;
-    category: Category;
-    author: Author;
+    category: {
+        id: string;
+        title: string;
+        slug?: string;
+        description?: string;
+    };
+    author: {
+        id: string;
+        first_name: string;
+        last_name: string;
+    };
     slug: string;
     image: string;
     body: string;
@@ -16,10 +25,4 @@ export interface Category {
     title: string;
     slug?: string;
     description?: string;
-}
-
-export interface Author {
-    id: string;
-    first_name: string;
-    last_name: string;
 }
