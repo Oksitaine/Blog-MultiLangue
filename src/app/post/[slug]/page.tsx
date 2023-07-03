@@ -23,6 +23,12 @@ export default function Page({params} : {params: {slug: string}}) {
     return (
         <PaddinContainer>
             <PostHero post={post} />
+            <div className="mt-10 flex gap-10" >
+                <div className="relative " >
+                    <div className="sticky top-20" >Share</div>
+                </div>
+                <div className="h-[1200px] w-full bg-slate-200" >Post Body</div>
+            </div>
         </PaddinContainer>
     );
 }

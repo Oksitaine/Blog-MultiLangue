@@ -76,6 +76,25 @@ export const DUMMY_DATA : Post[] = [
         body: "Come her for make money with MAGIC and buy a new car and a new house and a new wife and a new life",
         created_at: "2021-08-01T12:00:00.000Z",
         updated_at: "2021-08-01T12:00:00.000Z"
+    },
+    {
+        id: "5",
+        title : "New TEST",
+        description : "Car and a new house and a new wife and a new life",
+        category: {
+            id: "5",
+            title: "Business"
+        },
+        author: {
+            id: "5",
+            first_name: "EL MEDIRI ",
+            last_name: "Azdin",
+        },
+        slug: "headshot-ai",
+        image: "https://img.freepik.com/photos-gratuite/materiel-eclairage-professionnel-plateau-tournage-fumee-dans-air_1268-17216.jpg?w=1380&t=st=1688289911~exp=1688290511~hmac=f47b1d378afa4d5bf0bff19bae7857b5f8b6102ed93e594275933c754d6948ac",
+        body: "Come her for make money with MAGIC and buy a new car and a new house and a new wife and a new life",
+        created_at: "2021-08-01T12:00:00.000Z",
+        updated_at: "2021-08-01T12:00:00.000Z"
     }
 ]
 

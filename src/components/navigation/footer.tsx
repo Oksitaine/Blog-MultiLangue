@@ -4,7 +4,10 @@ import PaddinContainer from "../layouts/padding-container";
 import { Facebook } from "lucide-react";
 import SocialLink from "../elements/social-link";
 
-type SocialMedia = {socialname: string, link: string}[]
+type SocialMedia = {
+    socialname: "twitter" | "linkedin" | "github", 
+    link: string
+}[]
 
 const socialMedia : SocialMedia = [
     {
