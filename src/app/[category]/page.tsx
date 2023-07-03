@@ -10,7 +10,7 @@ type params = {
 export const generateStaticParams = () => {
     return DUMMY_CATEGORIES.map((category : Category) => {
         return {
-            slug: category.slug.toLocaleLowerCase()
+            category: category.slug.toLocaleLowerCase()
         }
     })
 }
