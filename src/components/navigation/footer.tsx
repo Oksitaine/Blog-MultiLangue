@@ -1,28 +1,9 @@
 import Link from "next/link";
 import siteConfig from "../../../config/site";
 import PaddinContainer from "../layouts/padding-container";
-import { Facebook } from "lucide-react";
 import SocialLink from "../elements/social-link";
-
-type SocialMedia = {
-    socialname: "twitter" | "linkedin" | "github", 
-    link: string
-}[]
-
-const socialMedia : SocialMedia = [
-    {
-        socialname : "twitter",
-        link : "https://twitter.com/Azdinmediri"
-    },
-    {
-        socialname : "linkedin",
-        link : "https://www.linkedin.com/in/azdinmediri/"
-    },
-    {
-        socialname : "github",
-        link : "https://github.com/WGlint",
-    }
-]
+import { socialMedia } from "../../../DUMMY_DATA";
+import { SocialMedia } from "../../../types/collextion";
 
 export default function Footer() {
 
@@ -42,7 +23,7 @@ export default function Footer() {
                     <div className="font-medium text-lg">#IndieHacker</div>
                     <div>Social Links</div>
                     <div className="flex items-center gap-3 mt-2 text-neutral-600">
-                        {socialMedia.map((social : {socialname : string, link : string}) => {
+                        {socialMedia.map((social : SocialMedia) => {
                             return <SocialLink key={social.socialname} link={social.link} socialmedia={social.socialname} size={18} />
                         })}
                     </div>

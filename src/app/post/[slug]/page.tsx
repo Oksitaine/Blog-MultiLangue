@@ -1,7 +1,11 @@
 import PaddinContainer from "@/components/layouts/padding-container";
-import { DUMMY_DATA } from "../../../../DUMMY_DATA";
+import { DUMMY_DATA, socialMedia } from "../../../../DUMMY_DATA";
 import { notFound } from "next/navigation";
 import PostHero from "@/components/post/post-hero";
+import SocialLink from "@/components/elements/social-link";
+import { SocialMedia } from "../../../../types/collextion";
+import PostBody from "@/components/post/post-body";
+import CTACard from "@/components/elements/cta-card";
 
 export const generateStaticParams = () => {
     return DUMMY_DATA.map((post) => {
@@ -10,7 +14,6 @@ export const generateStaticParams = () => {
         }
     })
 }
-
 
 export default function Page({params} : {params: {slug: string}}) {
 
@@ -22,12 +25,22 @@ export default function Page({params} : {params: {slug: string}}) {
 
     return (
         <PaddinContainer>
-            <PostHero post={post} />
-            <div className="mt-10 flex gap-10" >
-                <div className="relative " >
-                    <div className="sticky top-20" >Share</div>
-                </div>
-                <div className="h-[1200px] w-full bg-slate-200" >Post Body</div>
+            <div className="space-y-10">
+                <PostHero post={post} />
+                    <div className="flex flex-col gap-10 md:flex-row" >
+                        <div className="relative " >
+                            <div className="sticky flex md:flex-col items-center gap-5 top-20 " >
+                                <div className="font-medium md:hidden" >Share this content : </div>
+                                {socialMedia.map((social : SocialMedia) => {
+                                    return ( social.CanHaveShareLink ?
+                                    <SocialLink isShareURL key={social.socialname} link={social.Sharelink + `/post/${post.slug}`} socialmedia={social.socialname} size={18} /> :
+                                    null)
+                                })}
+                            </div>
+                        </div>
+                         <PostBody body={post.body} />
+                    </div>
+                <CTACard />
             </div>
         </PaddinContainer>
     );

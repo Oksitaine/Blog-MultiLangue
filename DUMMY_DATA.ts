@@ -1,4 +1,4 @@
-import { Category, Post } from "./types/collextion"
+import { Category, Post, SocialMedia } from "./types/collextion"
 
 export const DUMMY_DATA : Post[] = [
     {
@@ -110,5 +110,26 @@ export const DUMMY_CATEGORIES : Category[] = [
         title: "Business",
         slug: "business",
         description: "This is the business category"
+    }
+]
+
+export const socialMedia : SocialMedia[] = [
+    {
+        socialname : "twitter",
+        link : "https://twitter.com/Azdinmediri",
+        CanHaveShareLink : true,
+        Sharelink : `https://twitter.com/intent/tweet?url=${process.env.NEXT_PUBLIC_SITE_URL}`
+    },
+    {
+        socialname : "linkedin",
+        link : "https://www.linkedin.com/in/azdinmediri/",
+        CanHaveShareLink : true,
+        Sharelink : `https://linkedin.com/intent/shareArticle?mini=true&url=${process.env.NEXT_PUBLIC_SITE_URL}`
+    },
+    {
+        socialname : "github",
+        link : "https://github.com/WGlint",
+        CanHaveShareLink : false,
+        Sharelink : ""
     }
 ]

@@ -23,7 +23,7 @@ export default function PostCard({post, layout = "horizontal", reverse = false}:
                 }
             `}>
                 <Image 
-                    className={`rounded-md w-full object-cover object-center max-h-[300px] ${ reverse ? "md:order-last" : "" } `} 
+                    className={`rounded-md w-full object-cover object-center max-h-[300px] h-full ${ reverse ? "md:order-last" : "" } `} 
                     src={post.image} 
                     width={600} 
                     height={300} 

@@ -26,3 +26,10 @@ export interface Category {
     slug: string;
     description?: string;
 }
+
+export type SocialMedia = {
+    socialname: "twitter" | "linkedin" | "github", 
+    link: string,
+    CanHaveShareLink: boolean,
+    Sharelink: string
+}

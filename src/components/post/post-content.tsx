@@ -11,7 +11,7 @@ export default function PostContent({post, isPostPage = false} : PostContentProp
 
     return (
         <div className="space-y-2">
-            <div className={`items-center flex gap-1 text-neutral-400 ${isPostPage ? "text-sm" : "@md:text-sm text-xs"}`}>
+            <div className={`items-center flex flex-wrap gap-1 text-neutral-400 ${isPostPage ? "text-sm" : "@md:text-sm text-xs"}`}>
                 <div className={
                         `font-medium ${!(post.category.title === 'Coding') ? 'text-emerald-500' : 'text-indigo-500'}`
                     }>
