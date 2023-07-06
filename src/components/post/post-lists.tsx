@@ -9,7 +9,7 @@ interface PostListProps {
 export default function PostlistProps({posts, layout = "vertical"} : PostListProps){
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:grid-cols-3">{posts.map((post) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">{posts.map((post) => {
             return (
                 <PostCard key={post.id} post={post} layout={layout}/>
             )
