@@ -7,3 +7,5 @@ const supabase = createClient<Database>(
     process.env.ACCES_URL_SUPABASE as string, 
     process.env.ACCES_ANON_SUPABASE as string
 )
+
+export default supabase

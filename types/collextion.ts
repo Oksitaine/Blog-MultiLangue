@@ -1,3 +1,5 @@
+import { Database } from "./supabasetype";
+
 export interface Post {
     id: string;
     title: string;
@@ -33,3 +35,5 @@ export type SocialMedia = {
     CanHaveShareLink: boolean,
     Sharelink: string
 }
+
+export type PostSupabse = Database["public"]["Tables"]["Post"]["Row"]
