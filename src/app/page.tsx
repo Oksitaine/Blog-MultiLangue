@@ -1,41 +1,42 @@
 import PaddinContainer from "@/components/layouts/padding-container";
 import PostCard from "@/components/post/post-card";
-import Link from "next/link";
 import { DUMMY_DATA } from "../../DUMMY_DATA";
 import PostlistProps from "@/components/post/post-lists";
 import CTACard from "@/components/elements/cta-card";
-import supabase from "../../lib/supabase";
+import directus from "../../lib/directus";
+import { notFound } from "next/navigation";
 
-
-
-export default async function Home() {
+export default async function Home() {  
 
   const getAllPosts = async () => {
     try{
-      const posts = await supabase.from("category").select("*")
-      return posts
+      const posts = await directus.items("post").readByQuery({
+        fields: ["*", "author.id", "author.first_name", "author.last_name", "category.id", "category.title"]
+      });
+      return posts.data;
     }catch(error){
       throw new Error("Error fetching posts")
     }
   }
 
-  const postss = await getAllPosts()
-  console.log("Voici les posts : ");
-  console.log(postss);
-  
+  const posts = await getAllPosts();
+
+  if(!posts){
+    notFound()
+  }
 
   return (
     <PaddinContainer>
       <main className="h-auto space-y-10">
-        <PostCard post={DUMMY_DATA[3]} />
+        <PostCard post={posts[3]} />
         <PostlistProps
-          posts={DUMMY_DATA.filter((_post, index) => index == 2 || index == 1)}
+          posts={posts.filter((_post, index) => index == 2 || index == 1)}
           layout="vertical"
         />
         <CTACard />
-        <PostCard post={DUMMY_DATA[0]} reverse={true} />
+        <PostCard post={posts[0]} reverse={true} />
         <PostlistProps
-          posts={DUMMY_DATA.filter((_post, index) => index == 2 || index == 3)}
+          posts={posts.filter((_post, index) => index == 2 || index == 3)}
           layout="vertical"
         />
       </main>

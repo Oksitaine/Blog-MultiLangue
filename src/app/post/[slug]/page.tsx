@@ -6,18 +6,53 @@ import SocialLink from "@/components/elements/social-link";
 import { SocialMedia } from "../../../../types/collextion";
 import PostBody from "@/components/post/post-body";
 import CTACard from "@/components/elements/cta-card";
+import directus from "../../../../lib/directus";
 
-export const generateStaticParams = () => {
-    return DUMMY_DATA.map((post) => {
-        return {
-            slug: post.slug
-        }
-    })
+export const generateStaticParams = async () => {
+    try {
+        const post = await directus.items("post").readByQuery({
+            filter:{
+                status:{
+                    _eq: "published"
+                }
+            },
+            fields: ["slug"]
+        })
+
+        const params = post?.data?.map((post) => {
+            return {
+                slug: post.slug as string
+            }
+        })
+
+        return params || []
+    } catch (error) {
+        throw new Error("Error fetching posts")
+    }
 }
 
-export default function Page({params} : {params: {slug: string}}) {
+export default async function Page({params} : {params: {slug: string}}) {
 
-    const post = DUMMY_DATA.find((post) => post.slug === params.slug)
+    // const post = DUMMY_DATA.find((post) => post.slug === params.slug)
+
+    const getPost = async () => {
+        try {
+            const post = await directus.items("post").readByQuery({
+                filter: {
+                    slug: {
+                        _eq: params.slug
+                    }
+                },
+                fields: ["*", "category.id", "category.title", "author.id", "author.first_name", "author.last_name"]
+            })
+        
+            return post?.data?.[0]
+        } catch (error) {
+            throw new Error("Error fetching post data")
+        }
+    }
+
+    const post = await getPost()
 
     if(!post){
         notFound()

@@ -329,15 +329,15 @@
         "static/css/app/layout.css"
       ]
     },
+    "/Users/wglint/Desktop/NextJS/my-app/src/app/post/[slug]/not-found": {
+      "modules": [],
+      "files": []
+    },
     "/Users/wglint/Desktop/NextJS/my-app/src/app/[category]/page": {
       "modules": [],
       "files": []
     },
     "/Users/wglint/Desktop/NextJS/my-app/src/app/post/[slug]/page": {
-      "modules": [],
-      "files": []
-    },
-    "/Users/wglint/Desktop/NextJS/my-app/src/app/post/[slug]/not-found": {
       "modules": [],
       "files": []
     }

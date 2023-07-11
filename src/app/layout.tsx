@@ -14,7 +14,7 @@ export default function RootLayout({
     <html lang="en">
       <body >
         <Navigation />
-        <div className='pt-10' >
+        <div className='pt-10 min-h-[calc(100vh-300px)]' >
           {children}  
         </div>
         <Footer />
