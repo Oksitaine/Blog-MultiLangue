@@ -1,25 +1,30 @@
 import Image from "next/image";
 import directus from "../../../lib/directus";
-
-type FormData = {
-  get: (key: string) => string;
-};
+import { revalidateTag } from "next/cache";
 
 export default async function CTACard() {
 
-  const formAction = async (fromData:FormData) => {
-    'use server'
-    try {
-      const email = fromData.get('email')
-      await directus.items('subscribers').createOne({
-        email,
+  async function fromAction(fromAction: FormData) {
+    "use server"
+    try{
+      const getEmail = fromAction.get("email")
+      await directus.items("subscribers").createOne({
+        email: getEmail
       })
-    } catch (error) {
-      console.log('Voici lerreur suivante : ');
-      console.log(error);
+      revalidateTag("subscribers")
+    }catch(error){
+      console.log(error)
     }
   }
 
+  const numberSubscribers = await fetch(`${process.env.NEXT_PUBLIC_API_URL}items/subscribers?meta_count&access_token=${process.env.ADMIN_TOKEN}`,{
+    next: {
+      tags: ["subscribers"]
+    }
+  })
+    .then (res => res.json())
+    .then (data => data.data.length)
+    .catch(error => console.log(error))
 
   return (
     <div className="rounded-md bg-slate-100 py-10 px-6 relative overflow-hidden">
@@ -40,10 +45,10 @@ export default async function CTACard() {
           the University of Stanford 🇺🇸. I love to explore the world of computer
           science and I am here to share my knowledge with you 🫡 !
         </p>
-        <form action={formAction} className="mt-6 flex items-center gap-2 w-full">
+        <form action={fromAction} className="mt-6 flex items-center gap-2 w-full">
           <input
-            type="email"
             name="email"
+            type="email"
             placeholder="Write your email..."
             className="bg-white md:w-auto w-full text-base rounded-md py-2 px-3 outline-none placeholder:text-sm ring-neutral-600 focus:ring-2"
           />
@@ -51,6 +56,9 @@ export default async function CTACard() {
             Sign Up
           </button>
         </form>
+        <div className="mt-5 text-neutral-700">
+            Join <span className="bg-neutral-700 text-sm text-neutral-100 px-2 py-1 rounded-md">{numberSubscribers}</span> members in our community !
+        </div>
       </div>
     </div>
   );

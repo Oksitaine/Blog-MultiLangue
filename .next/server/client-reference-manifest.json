@@ -271,7 +271,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/layout:static/chunks/app/layout.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -279,7 +279,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/layout:static/chunks/app/layout.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -317,7 +317,11 @@
     }
   },
   "entryCSSFiles": {
-    "/Users/wglint/Desktop/NextJS/my-app/src/app/page": {
+    "/Users/wglint/Desktop/NextJS/my-app/src/app/post/[slug]/page": {
+      "modules": [],
+      "files": []
+    },
+    "/Users/wglint/Desktop/NextJS/my-app/src/app/post/[slug]/not-found": {
       "modules": [],
       "files": []
     },
@@ -328,6 +332,10 @@
       "files": [
         "static/css/app/layout.css"
       ]
+    },
+    "/Users/wglint/Desktop/NextJS/my-app/src/app/page": {
+      "modules": [],
+      "files": []
     }
   }
 }
