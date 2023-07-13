@@ -1,6 +1,26 @@
 import Image from "next/image";
+import directus from "../../../lib/directus";
 
-export default function CTACard() {
+type FormData = {
+  get: (key: string) => string;
+};
+
+export default async function CTACard() {
+
+  const formAction = async (fromData:FormData) => {
+    'use server'
+    try {
+      const email = fromData.get('email')
+      await directus.items('subscribers').createOne({
+        email,
+      })
+    } catch (error) {
+      console.log('Voici lerreur suivante : ');
+      console.log(error);
+    }
+  }
+
+
   return (
     <div className="rounded-md bg-slate-100 py-10 px-6 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/70 z-10" />
@@ -20,8 +40,10 @@ export default function CTACard() {
           the University of Stanford 🇺🇸. I love to explore the world of computer
           science and I am here to share my knowledge with you 🫡 !
         </p>
-        <form className="mt-6 flex items-center gap-2 w-full">
+        <form action={formAction} className="mt-6 flex items-center gap-2 w-full">
           <input
+            type="email"
+            name="email"
             placeholder="Write your email..."
             className="bg-white md:w-auto w-full text-base rounded-md py-2 px-3 outline-none placeholder:text-sm ring-neutral-600 focus:ring-2"
           />

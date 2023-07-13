@@ -15,6 +15,7 @@ export default async function Home() {
       });
       return posts.data;
     }catch(error){
+      console.log(error);
       throw new Error("Error fetching posts")
     }
   }

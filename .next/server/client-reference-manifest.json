@@ -255,7 +255,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "*",
       "chunks": [
-        "app/post/[slug]/page:static/chunks/app/post/[slug]/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -263,7 +263,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "*",
       "chunks": [
-        "app/post/[slug]/page:static/chunks/app/post/[slug]/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -271,7 +271,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/post/[slug]/page:static/chunks/app/post/[slug]/page.js"
+        "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
     },
@@ -279,7 +279,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/post/[slug]/page:static/chunks/app/post/[slug]/page.js"
+        "app/layout:static/chunks/app/layout.js"
       ],
       "async": false
     },
@@ -287,7 +287,7 @@
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "*",
       "chunks": [
-        "app/post/[slug]/page:static/chunks/app/post/[slug]/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -295,7 +295,7 @@
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "*",
       "chunks": [
-        "app/post/[slug]/page:static/chunks/app/post/[slug]/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -303,7 +303,7 @@
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "*",
       "chunks": [
-        "app/post/[slug]/page:static/chunks/app/post/[slug]/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     },
@@ -311,7 +311,7 @@
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "*",
       "chunks": [
-        "app/post/[slug]/page:static/chunks/app/post/[slug]/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     }
@@ -328,18 +328,6 @@
       "files": [
         "static/css/app/layout.css"
       ]
-    },
-    "/Users/wglint/Desktop/NextJS/my-app/src/app/post/[slug]/not-found": {
-      "modules": [],
-      "files": []
-    },
-    "/Users/wglint/Desktop/NextJS/my-app/src/app/[category]/page": {
-      "modules": [],
-      "files": []
-    },
-    "/Users/wglint/Desktop/NextJS/my-app/src/app/post/[slug]/page": {
-      "modules": [],
-      "files": []
     }
   }
 }
