@@ -5,6 +5,7 @@ import PostlistProps from "@/components/post/post-lists";
 import CTACard from "@/components/elements/cta-card";
 import directus from "../../../lib/directus";
 import { notFound } from "next/navigation";
+import supabase from "../../../lib/supabase";
 
 export default async function Home({params} : {params: {lang: string}}) {  
 

@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body >
+      <body>
         <Navigation />
         <div className='pt-10 min-h-[calc(100vh-300px)]' >
           {children}  

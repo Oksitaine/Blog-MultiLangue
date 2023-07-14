@@ -1,9 +1,11 @@
-type i83n = {
-    defaultLocale: string;
-    locales: string[];
+interface I18nConfig {
+  defaultLocale: string;
+  locales: string[];
 }
 
-export const i83n: i83n = {
-    defaultLocale: "en",
-    locales: ["en", "de"],
-}
+const i83n: I18nConfig = {
+  defaultLocale: "en",
+  locales: ["en", "de"],
+};
+
+export default i83n;
