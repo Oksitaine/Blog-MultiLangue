@@ -317,10 +317,6 @@
     }
   },
   "entryCSSFiles": {
-    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/not-found": {
-      "modules": [],
-      "files": []
-    },
     "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/layout": {
       "modules": [
         "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/globals.css"
@@ -333,11 +329,15 @@
       "modules": [],
       "files": []
     },
-    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/post/[slug]/page": {
+    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/not-found": {
       "modules": [],
       "files": []
     },
     "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/post/[slug]/not-found": {
+      "modules": [],
+      "files": []
+    },
+    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/post/[slug]/page": {
       "modules": [],
       "files": []
     },

@@ -20,20 +20,6 @@ export default async function Home({params} : {params: {lang: string}}) {
       throw new Error("Error fetching posts")
     }
   }
-  
-
- const data = await supabase.from('')
-
-
-
-
-
-
-
-
-
-
-
 
   const posts = await getAllPosts();
 
