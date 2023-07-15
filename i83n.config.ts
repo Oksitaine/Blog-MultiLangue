@@ -5,7 +5,7 @@ interface I18nConfig {
 
 const i83n: I18nConfig = {
   defaultLocale: "en",
-  locales: ["en", "de"],
+  locales: ["en", "de", "fr"],
 };
 
 export default i83n;

@@ -22,6 +22,19 @@ export default async function Home({params} : {params: {lang: string}}) {
   }
   
 
+ const data = await supabase.from('')
+
+
+
+
+
+
+
+
+
+
+
+
   const posts = await getAllPosts();
 
   if(!posts){
