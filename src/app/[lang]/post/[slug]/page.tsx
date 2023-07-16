@@ -31,7 +31,10 @@ export const generateStaticParams = async () => {
     }
 }
 
-export default async function Page({params} : {params: {slug: string}}) {
+export default async function Page({params} : {params: {
+    lang: string;
+    slug: string
+}}) {
 
     // const post = DUMMY_DATA.find((post) => post.slug === params.slug)
 
@@ -51,7 +54,7 @@ export default async function Page({params} : {params: {slug: string}}) {
             throw new Error("Error fetching post data")
         }
     }
-
+    
     const post = await getPost()
 
     if(!post){
@@ -61,7 +64,7 @@ export default async function Page({params} : {params: {slug: string}}) {
     return (
         <PaddinContainer>
             <div className="space-y-10">
-                <PostHero post={post} />
+                <PostHero local={params.lang} post={post} />
                     <div className="flex flex-col gap-10 md:flex-row" >
                         <div className="relative " >
                             <div className="sticky flex md:flex-col items-center gap-5 top-20 " >
@@ -75,7 +78,7 @@ export default async function Page({params} : {params: {slug: string}}) {
                         </div>
                          <PostBody body={post.body} />
                     </div>
-                <CTACard />
+                <CTACard local={params.lang}/>
             </div>
         </PaddinContainer>
     );

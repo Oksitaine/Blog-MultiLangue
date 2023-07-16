@@ -2,7 +2,8 @@
     "navigation": {
         "links": {
             "coding": "Coding",
-            "business": "Business"
+            "business": "Business",
+            "explorer": "Explorer"
         }
     },
     "buttons":{
@@ -19,8 +20,12 @@
     },
     "footer":{
         "description": "AI, mathematics, web... everything is in this blog",
-        "rightsText": "All right are reserved | Copyright 2023",
+        "rightsText": "All right are reserved | Copyright",
         "creatorText": "Made with ❤️ by",
-        "currenltyAtText": "Currently At"
+        "currenltyAtText": "Currently At",
+        "sociallink": "Social Links"
+    },
+    "error404":{
+        "pagenotfound": "Page not found"
     }
 }

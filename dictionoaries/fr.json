@@ -2,7 +2,8 @@
     "navigation": {
         "links": {
             "coding": "Codage",
-            "business": "Affaires"
+            "business": "Affaires",
+            "explorer": "Explorer"
         }
     },
     "buttons":{
@@ -19,8 +20,12 @@
     },
     "footer":{
         "description": "IA, mathématiques, web... tout est dans ce blog",
-        "rightsText": "Tous les droits sont réservés | Copyright 2023",
+        "rightsText": "Tous les droits sont réservés | Copyright",
         "creatorText": "Fait avec ❤️ par",
-        "currenltyAtText": "Actuellement à"
+        "currenltyAtText": "Actuellement à",
+        "sociallink": "Liens sociaux"
+    },
+    "error404":{
+        "pagenotfound": "Page non trouvée"
     }
 }

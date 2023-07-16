@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 
 type params = {
     category: string;
+    lang: string
 }
 
 export const generateStaticParams = async () => {
@@ -74,13 +75,16 @@ export default async function Page({params} : {params: params}) {
         posts: Post[];
     }
 
+    console.log(params.lang);
+    
+
     return (
         <PaddinContainer>
             <div className="mb-10">
                 <h1 className="text-4xl font-semibold" >{typeCategory?.title}</h1>
                 <p className="text-lg text-neutral-600" >{typeCategory?.description}</p>
             </div>
-            <PostlistProps posts={typeCategory.posts} />
+            <PostlistProps local={params.lang} posts={typeCategory.posts} />
         </PaddinContainer>
     );
 }

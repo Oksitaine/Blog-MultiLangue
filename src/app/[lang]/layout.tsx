@@ -13,14 +13,15 @@ export default function RootLayout({
   children: React.ReactNode,
   params: params
 }) {
+
   return (
     <html lang={params.lang}>
       <body>
-        <Navigation />
+        <Navigation local={params.lang} />
         <div className='pt-10 min-h-[calc(100vh-300px)]' >
           {children}  
         </div>
-        <Footer />
+        <Footer local={params.lang} />
       </body>
     </html>
   )

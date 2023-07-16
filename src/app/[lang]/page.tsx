@@ -30,14 +30,16 @@ export default async function Home({params} : {params: {lang: string}}) {
   return (
     <PaddinContainer>
       <main className="h-auto pb-10 space-y-20 lg:space-y-10 lg:pb-0">
-        <PostCard post={posts[3]} />
+        <PostCard local={params.lang} post={posts[3]} />
         <PostlistProps
+          local={params.lang}
           posts={posts.filter((_post, index) => index == 2 || index == 1)}
           layout="vertical"
         />
-        <CTACard />
-        <PostCard post={posts[0]} reverse={true} />
+        <CTACard local={params.lang} />
+        <PostCard local={params.lang} post={posts[0]} reverse={true} />
         <PostlistProps
+          local={params.lang}
           posts={posts.filter((_post, index) => index == 2 || index == 3)}
           layout="vertical"
         />

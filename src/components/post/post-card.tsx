@@ -7,14 +7,15 @@ import { Layout } from "lucide-react"
 interface PostProps {
     post: Post,
     layout?: "vertical" | "horizontal",
-    reverse?: boolean
+    reverse?: boolean,
+    local : string
 }
 
-export default function PostCard({post, layout = "horizontal", reverse = false}: PostProps){
+export default function PostCard({post, layout = "horizontal", reverse = false, local}: PostProps){
 
     return (
         <Link 
-            href={`/post/${post.slug}`} 
+            href={`/${local}/post/${post.slug}`} 
             className={`@container
                 ${
                     layout === "horizontal" ?
@@ -29,7 +30,7 @@ export default function PostCard({post, layout = "horizontal", reverse = false}:
                     height={300} 
                     alt={post.title}
                 />
-            <PostContent post={post}/>
+            <PostContent local={local} post={post}/>
         </Link>
     )
 }

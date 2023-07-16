@@ -18,7 +18,7 @@ export interface Post {
     slug: string;
     image: string;
     body: string;
-    created_at: string;
+    date_created: string;
     updated_at: string;
 }
 

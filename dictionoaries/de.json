@@ -2,7 +2,8 @@
     "navigation": {
         "links": {
             "coding": "Programmierung",
-            "business": "Geschäft"
+            "business": "Geschäft",
+            "explorer": "Erkunden"
         }
     },
     "buttons":{
@@ -19,8 +20,12 @@
     },
     "footer":{
         "description": "KI, Mathematik, Web... alles ist in diesem Blog",
-        "rightsText": "Alle Rechte vorbehalten | Urheberrecht 2023",
+        "rightsText": "Alle Rechte vorbehalten | Urheberrecht",
         "creatorText": "Mit ❤️ gemacht von",
-        "currenltyAtText": "Derzeit bei"
+        "currenltyAtText": "Derzeit bei",
+        "sociallink": "Soziale Links"
+    },
+    "error404":{
+        "pagenotfound": "Seite nicht gefunden"
     }
 }
