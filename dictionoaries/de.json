@@ -1,0 +1,26 @@
+{
+    "navigation": {
+        "links": {
+            "coding": "Programmierung",
+            "business": "Geschäft"
+        }
+    },
+    "buttons":{
+        "readMore": "Mehr lesen"
+    },
+    "ctaCard":{
+        "hashtag": "#IchLiebeKIundMathe",
+        "title": "Erkunden Sie die Informatik mit mir!",
+        "description": "Entdecken Sie alles, was Sie mit mir machen können! Ich bin ein Informatikstudent 💻 an der Universität von Stanford 🇺🇸. Ich liebe es, die Welt der Informatik zu erkunden und bin hier, um mein Wissen mit Ihnen zu teilen 🫡 !",
+        "placeholder": "Schreiben Sie Ihre E-Mail...",
+        "button": "Anmelden",
+        "SubText1": "Beitreten",
+        "SubText2": "Mitglieder in unserer Gemeinschaft !"
+    },
+    "footer":{
+        "description": "KI, Mathematik, Web... alles ist in diesem Blog",
+        "rightsText": "Alle Rechte vorbehalten | Urheberrecht 2023",
+        "creatorText": "Mit ❤️ gemacht von",
+        "currenltyAtText": "Derzeit bei"
+    }
+}

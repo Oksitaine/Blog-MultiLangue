@@ -1,0 +1,26 @@
+{
+    "navigation": {
+        "links": {
+            "coding": "Codage",
+            "business": "Affaires"
+        }
+    },
+    "buttons":{
+        "readMore": "Lire plus"
+    },
+    "ctaCard":{
+        "hashtag": "#JadoreIAetMaths",
+        "title": "Explorez l'informatique avec moi !",
+        "description": "Découvrez tout ce que vous pouvez faire avec moi ! Je suis un étudiant en informatique 💻 à l'Université de Stanford 🇺🇸. J'adore explorer le monde de l'informatique et je suis ici pour partager mes connaissances avec vous 🫡 !",
+        "placeholder": "Écrivez votre email...",
+        "button": "S'inscrire",
+        "SubText1": "Rejoignez",
+        "SubText2": "membres dans notre communauté !"
+    },
+    "footer":{
+        "description": "IA, mathématiques, web... tout est dans ce blog",
+        "rightsText": "Tous les droits sont réservés | Copyright 2023",
+        "creatorText": "Fait avec ❤️ par",
+        "currenltyAtText": "Actuellement à"
+    }
+}

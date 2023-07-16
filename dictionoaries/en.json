@@ -1,0 +1,26 @@
+{
+    "navigation": {
+        "links": {
+            "coding": "Coding",
+            "business": "Business"
+        }
+    },
+    "buttons":{
+        "readMore": "Read More"
+    },
+    "ctaCard":{
+        "hashtag": "#IloveAIandMaths",
+        "title": "Explore computer science with me!",
+        "description": "Explore all you can do with me! I am a computer science student 💻 at the University of Stanford 🇺🇸. I love to explore the world of computer science and I am here to share my knowledge with you 🫡 !",
+        "placeholder": "Write your email...",
+        "button": "Sign Up",
+        "SubText1": "Join",
+        "SubText2": "members in our community !"
+    },
+    "footer":{
+        "description": "AI, mathematics, web... everything is in this blog",
+        "rightsText": "All right are reserved | Copyright 2023",
+        "creatorText": "Made with ❤️ by",
+        "currenltyAtText": "Currently At"
+    }
+}

@@ -255,7 +255,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/[lang]/[category]/page:static/chunks/app/[lang]/[category]/page.js"
+        "app/[lang]/post/[slug]/page:static/chunks/app/[lang]/post/[slug]/page.js"
       ],
       "async": false
     },
@@ -263,7 +263,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/[lang]/[category]/page:static/chunks/app/[lang]/[category]/page.js"
+        "app/[lang]/post/[slug]/page:static/chunks/app/[lang]/post/[slug]/page.js"
       ],
       "async": false
     },
@@ -271,7 +271,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "*",
       "chunks": [
-        "app/[lang]/[category]/page:static/chunks/app/[lang]/[category]/page.js"
+        "app/[lang]/post/[slug]/page:static/chunks/app/[lang]/post/[slug]/page.js"
       ],
       "async": false
     },
@@ -279,7 +279,7 @@
       "id": "(app-client)/./node_modules/next/dist/client/image.js",
       "name": "*",
       "chunks": [
-        "app/[lang]/[category]/page:static/chunks/app/[lang]/[category]/page.js"
+        "app/[lang]/post/[slug]/page:static/chunks/app/[lang]/post/[slug]/page.js"
       ],
       "async": false
     },
@@ -287,7 +287,7 @@
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "*",
       "chunks": [
-        "app/[lang]/[category]/page:static/chunks/app/[lang]/[category]/page.js"
+        "app/[lang]/post/[slug]/page:static/chunks/app/[lang]/post/[slug]/page.js"
       ],
       "async": false
     },
@@ -295,7 +295,7 @@
       "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
       "name": "*",
       "chunks": [
-        "app/[lang]/[category]/page:static/chunks/app/[lang]/[category]/page.js"
+        "app/[lang]/post/[slug]/page:static/chunks/app/[lang]/post/[slug]/page.js"
       ],
       "async": false
     },
@@ -303,7 +303,7 @@
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "*",
       "chunks": [
-        "app/[lang]/[category]/page:static/chunks/app/[lang]/[category]/page.js"
+        "app/[lang]/post/[slug]/page:static/chunks/app/[lang]/post/[slug]/page.js"
       ],
       "async": false
     },
@@ -311,12 +311,16 @@
       "id": "(app-client)/./node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "*",
       "chunks": [
-        "app/[lang]/[category]/page:static/chunks/app/[lang]/[category]/page.js"
+        "app/[lang]/post/[slug]/page:static/chunks/app/[lang]/post/[slug]/page.js"
       ],
       "async": false
     }
   },
   "entryCSSFiles": {
+    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/not-found": {
+      "modules": [],
+      "files": []
+    },
     "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/layout": {
       "modules": [
         "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/globals.css"
@@ -329,19 +333,11 @@
       "modules": [],
       "files": []
     },
-    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/not-found": {
-      "modules": [],
-      "files": []
-    },
-    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/post/[slug]/not-found": {
-      "modules": [],
-      "files": []
-    },
     "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/post/[slug]/page": {
       "modules": [],
       "files": []
     },
-    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/[category]/page": {
+    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/post/[slug]/not-found": {
       "modules": [],
       "files": []
     }
