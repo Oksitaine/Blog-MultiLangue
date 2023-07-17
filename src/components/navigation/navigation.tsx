@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PaddinContainer from "../layouts/padding-container";
 import getDictionary from "../../../lib/getDictionary";
+import LangSwitcher from "./lang-switcher";
 
 export default async function Navigation({local} : {local : string}){
 
@@ -14,6 +15,9 @@ export default async function Navigation({local} : {local : string}){
                     {/* Category Links */}
                     <nav>
                         <ul className="flex items-center gap-4 text-neutral-500">
+                            <li>
+                                <LangSwitcher local={local} />
+                            </li>
                             <li>
                                 <Link href={`/${local}/coding`}>{dictionary.navigation.links.coding}</Link>
                             </li>
