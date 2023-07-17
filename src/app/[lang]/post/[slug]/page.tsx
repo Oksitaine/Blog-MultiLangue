@@ -84,7 +84,8 @@ export default async function Page({params} : {params: {
                 }
             }
         } catch (error) {
-            throw new Error("Error fetching post data")
+            // Error data in /fr and /de path
+            notFound()
         }
     }
     

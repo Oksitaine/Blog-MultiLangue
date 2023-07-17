@@ -75,7 +75,7 @@ export default async function Page({params} : {params: params}) {
             })
 
             const Data_Categorie = category?.data?.[0]
-
+            
             if(params.lang === "en"){
                 return Data_Categorie
             } else if ( params.lang === "de" ){
@@ -106,7 +106,8 @@ export default async function Page({params} : {params: params}) {
                 }
             }
         } catch (error) {
-            throw new Error(error as string)
+            // Error data in /fr and /de path
+            notFound()
         }
     }
 
