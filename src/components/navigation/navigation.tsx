@@ -23,6 +23,7 @@ export default async function Navigation({local} : {local : string}){
                         </ul>
                     </nav>
                 </div>
+                
             </PaddinContainer>
         </div>
     )

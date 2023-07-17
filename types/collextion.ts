@@ -20,6 +20,16 @@ export interface Post {
     body: string;
     date_created: string;
     updated_at: string;
+    translations?: [
+        {
+            id: number;
+            post_id: string;
+            languages_code: "fr-FR" | "de-DE";
+            title: string;
+            description: string;
+            body: string;
+        }
+    ]
 }
 
 export interface Category {
@@ -37,3 +47,15 @@ export type SocialMedia = {
 }
 
 export type PostSupabse = Database["public"]["Tables"]["Post"]["Row"]
+
+
+
+const obj = {
+    titre : "Vivelesgays",
+    pays: {
+        france : "fr",
+        japon : "jp"
+    }
+}
+
+obj.pays["japon"]

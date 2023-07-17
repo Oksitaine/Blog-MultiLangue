@@ -23,11 +23,28 @@ export const generateStaticParams = async () => {
 
         const params = categories?.data?.map((category) => {
             return {
-                category: category.slug as string
+                category: category.slug as string,
+                lang: "en"
             }
         })
 
-        return params || []
+        const paramsDE = categories?.data?.map((category) => {
+            return {
+                category: category.slug as string,
+                lang: "de"
+            }
+        })
+
+        const paramsFR = categories?.data?.map((category) => {
+            return {
+                category: category.slug as string,
+                lang: "fr"
+            }
+        })
+
+        const Allparams = params?.concat(paramsDE ?? []).concat(paramsFR ?? [])
+
+        return Allparams || []
     } catch (error) {
         console.log(error);
         throw new Error("Error fetching categories")
@@ -51,17 +68,50 @@ export default async function Page({params} : {params: params}) {
                     "posts.author.first_name",
                     "posts.author.last_name",
                     "posts.category.id",
-                    "posts.category.title"
+                    "posts.category.title",
+                    "posts.translations.*",
+                    "translations.*"
                 ]
             })
 
-            return category?.data?.[0]
+            const Data_Categorie = category?.data?.[0]
+
+            if(params.lang === "en"){
+                return Data_Categorie
+            } else if ( params.lang === "de" ){
+                return {
+                    ...Data_Categorie,
+                    title: Data_Categorie.translations.find((categorie : any) => categorie.languages_id === "de-DE").title,
+                    description: Data_Categorie.translations.find((categorie : any) => categorie.languages_id === "de-DE").description,
+                    posts : Data_Categorie.posts.map((post : any) => {
+                        return {
+                            ...post,
+                            title : post.translations.find((localpost : any) => localpost.languages_code === "de-DE").title,
+                            description : post.translations.find((localpost : any) => localpost.languages_code === "de-DE").description,
+                        }
+                    })
+                }
+            } else {
+                return {
+                    ...Data_Categorie,
+                    title: Data_Categorie.translations.find((categorie : any) => categorie.languages_id === "fr-FR").title,
+                    description: Data_Categorie.translations.find((categorie : any) => categorie.languages_id === "fr-FR").description,
+                    posts : Data_Categorie.posts.map((post : any) => {
+                        return {
+                            ...post,
+                            title : post.translations.find((localpost : any) => localpost.languages_code === "fr-FR").title,
+                            description : post.translations.find((localpost : any) => localpost.languages_code === "fr-FR").description,
+                        }
+                    })
+                }
+            }
         } catch (error) {
-            throw new Error("Error fetching category data")
+            throw new Error(error as string)
         }
     }
 
     const category = await getCategoryData()
+    
 
     if(!category){
         notFound()
@@ -74,9 +124,6 @@ export default async function Page({params} : {params: params}) {
         slug: string;
         posts: Post[];
     }
-
-    console.log(params.lang);
-    
 
     return (
         <PaddinContainer>

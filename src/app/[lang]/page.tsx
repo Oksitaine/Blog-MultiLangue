@@ -12,9 +12,27 @@ export default async function Home({params} : {params: {lang: string}}) {
   const getAllPosts = async () => {
     try{
       const posts = await directus.items("post").readByQuery({
-        fields: ["*", "author.id", "author.first_name", "author.last_name", "category.id", "category.title"]
+        fields: ["*", "author.id", "author.first_name", "author.last_name", "category.id", "category.title", "category.translations.*", "translations.*"]
       });
-      return posts.data;
+      if(params.lang === "en"){
+        return posts.data
+      } else {
+        if(params.lang === "fr"){
+          return posts.data?.map((post) => { 
+            return {
+              ...post,
+              title: post.translations.find((Localpost : any) => Localpost.languages_code === "fr-FR").title,
+              description: post.translations.find((Localpost : any) => Localpost.languages_code === "fr-FR").description
+          }})
+        } else {
+          return posts.data?.map((post) => { 
+            return {
+              ...post,
+              title: post.translations.find((Localpost : any) => Localpost.languages_code === "de-DE").title,
+              description: post.translations.find((Localpost : any) => Localpost.languages_code === "de-DE").description
+          }})
+        }
+      }
     }catch(error){
       console.log(error);
       throw new Error("Error fetching posts")

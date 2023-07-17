@@ -21,11 +21,28 @@ export const generateStaticParams = async () => {
 
         const params = post?.data?.map((post) => {
             return {
-                slug: post.slug as string
+                slug: post.slug as string,
+                lang: "en"
             }
         })
 
-        return params || []
+        const paramsDE = post?.data?.map((post) => {
+            return {
+                slug: post.slug as string,
+                lang: "de"
+            }
+        })
+
+        const paramsFR = post?.data?.map((post) => {
+            return {
+                slug: post.slug as string,
+                lang: "fr"
+            }
+        })
+
+        const Allparams = params?.concat(paramsDE ?? []).concat(paramsFR ?? [])
+
+        return Allparams || []
     } catch (error) {
         throw new Error("Error fetching posts")
     }
@@ -36,8 +53,6 @@ export default async function Page({params} : {params: {
     slug: string
 }}) {
 
-    // const post = DUMMY_DATA.find((post) => post.slug === params.slug)
-
     const getPost = async () => {
         try {
             const post = await directus.items("post").readByQuery({
@@ -46,10 +61,28 @@ export default async function Page({params} : {params: {
                         _eq: params.slug
                     }
                 },
-                fields: ["*", "category.id", "category.title", "author.id", "author.first_name", "author.last_name"]
+                fields: ["*", "category.id", "category.title", "author.id", "author.first_name", "author.last_name", "translations.*","category.translations.*"]
             })
-        
-            return post?.data?.[0]
+
+            const Data_Post = post?.data?.[0]
+
+            if(params.lang === "en"){
+                return Data_Post
+            } else if (params.lang === "de"){
+                return {
+                    ...Data_Post,
+                    title : Data_Post.translations.find((post : any) => post.languages_code === "de-DE").title,
+                    description : Data_Post.translations.find((post : any) => post.languages_code === "de-DE").description,
+                    body : Data_Post.translations.find((post : any) => post.languages_code === "de-DE").body
+                }
+            } else {
+                return {
+                    ...Data_Post,
+                    title : Data_Post.translations.find((post : any) => post.languages_code === "fr-FR").title,
+                    description : Data_Post.translations.find((post : any) => post.languages_code === "fr-FR").description,
+                    body : Data_Post.translations.find((post : any) => post.languages_code === "fr-FR").body
+                }
+            }
         } catch (error) {
             throw new Error("Error fetching post data")
         }
