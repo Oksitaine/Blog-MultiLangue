@@ -27,5 +27,9 @@
     },
     "error404":{
         "pagenotfound": "Seite nicht gefunden"
+    },
+    "MetaData":{
+        "title" : "WGlint Startseite",
+        "description": "Willkommen im Blog von WGlint"
     }
 }

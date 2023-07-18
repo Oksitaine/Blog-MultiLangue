@@ -6,7 +6,8 @@ export interface SiteConfig {
         twitter : string,
         github : string,
         linkedin : string
-    }
+    },
+    site: string
 }
 
 const siteConfig: SiteConfig = {
@@ -18,7 +19,8 @@ const siteConfig: SiteConfig = {
         twitter : "https://twitter.com/Azdinmediri",
         github : "https://github.com/WGlint",
         linkedin : "https://www.linkedin.com/in/azdin-el-mediri-447109262/"
-    }
+    },
+    site: "WGlint"
 }
 
 export default siteConfig

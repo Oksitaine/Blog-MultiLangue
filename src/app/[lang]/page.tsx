@@ -35,7 +35,7 @@ export default async function Home({params} : {params: {lang: string}}) {
       }
     }catch(error){
       console.log(error);
-      throw new Error("Error fetching posts")
+      throw new Error(error as string)
     }
   }
 
