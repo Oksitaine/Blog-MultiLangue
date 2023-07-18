@@ -12,7 +12,7 @@ type params = {
   lang: string
 }
 
-export const generateMetadata = async ({params : {lang}} : {params : {lang : string}}) => {
+export const generateMetadata = async ({params : {lang}} : {params : {lang : string}}) : Promise<Metadata>=> {
 
   const dictionary = await getDictionary(lang)
 
@@ -29,13 +29,21 @@ export const generateMetadata = async ({params : {lang}} : {params : {lang : str
       siteName: siteConfig.site ,
       images: [
         {
-          url: `${process.env.NEXT_PUBLIC_SITE_URL}/opengraph-iamge.png`,
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/opengraph-image.png`,
           width: 1200,
           height: 628,
         }
       ],
       locale: lang,
-      type: 'website',
+      type: 'website'
+    },
+    alternates:{
+      canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/${lang}`,
+      languages: {
+        'en-US': `${process.env.NEXT_PUBLIC_SITE_URL}/en`,
+        'fr-FR': `${process.env.NEXT_PUBLIC_SITE_URL}/fr`,
+        'de-DE': `${process.env.NEXT_PUBLIC_SITE_URL}/de`,
+      }
     }
   }
 }

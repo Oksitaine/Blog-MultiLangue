@@ -5,36 +5,41 @@ import { Category, Post } from "../../../../types/collextion";
 import directus from "../../../../lib/directus";
 import { notFound } from "next/navigation";
 import { cache } from "react";
+import { Metadata } from "next";
 
 type params = {
     category: string;
     lang: string
 }
 
-export const generateMetadata = async ({ params: { category, lang } } : { params : params }) => {
+export const generateMetadata = async ({ params: { category, lang } } : { params : params }) : Promise<Metadata> => {
 
     const categoryData = await getCategoryData(category, lang)
 
     return {
         title: categoryData.title,
-        descrption: categoryData.description,
+        description: categoryData.description,
         openGraph: {
           title: categoryData.title ,
           description: categoryData.description,
           url: `${process.env.NEXT_PUBLIC_SITE_URL}/${lang}/${category}`,
           siteName: categoryData.title ,
-          images: [
-            {
-              url: `${process.env.NEXT_PUBLIC_SITE_URL}/opengraph-iamge.png`,
-              width: 1200,
-              height: 628,
-            }
-          ],
           locale: lang,
           type: 'website',
+        },
+        alternates:{
+          canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/${lang}/${category}`,
+          languages: {
+            'en-US': `${process.env.NEXT_PUBLIC_SITE_URL}/en/${category}`,
+            'fr-FR': `${process.env.NEXT_PUBLIC_SITE_URL}/fr/${category}`,
+            'de-DE': `${process.env.NEXT_PUBLIC_SITE_URL}/de/${category}`,
+          }
         }
-    }
+      }
 }
+
+
+
 
 export const generateStaticParams = async () => {
 
@@ -105,7 +110,7 @@ export default async function Page({params} : {params: params}) {
     );
 }
 
-const getCategoryData = cache(async (categorySLUG : string, lang : string) => {
+export const getCategoryData = cache(async (categorySLUG : string, lang : string) => {
     try {
         const category = await directus.items("category").readByQuery({
             filter: {

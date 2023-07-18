@@ -9,6 +9,10 @@ const nextConfig = {
             {
                 hostname: "directus-production-ab09.up.railway.app",
                 protocol: "https",
+            },
+            {
+                hostname: "images.pexels.com",
+                protocol: "https",
             }
         ]
     },
