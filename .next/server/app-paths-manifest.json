@@ -1,3 +1,4 @@
 {
+  "/robots.txt/route": "app/robots.txt/route.js",
   "/[lang]/[category]/page": "app/[lang]/[category]/page.js"
 }
