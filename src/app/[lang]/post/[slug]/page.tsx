@@ -11,6 +11,7 @@ import { cache } from "react";
 import { Metadata } from "next";
 import { Article, TechArticle, WithContext } from "schema-dts";
 import siteConfig from "../../../../../config/site";
+import getDictionary from "../../../../../lib/getDictionary";
 
 export const generateStaticParams = async () => {
     try {
@@ -107,6 +108,8 @@ export default async function Page({ params }: {
         notFound()
     }
 
+    const dictionary = await getDictionary(params.lang)
+
     return (
         <PaddinContainer>
             <script
@@ -128,7 +131,7 @@ export default async function Page({ params }: {
                     </div>
                     <PostBody body={post.body} />
                 </div>
-                <CTACard local={params.lang} />
+                <CTACard dictionary={dictionary} />
             </div>
         </PaddinContainer>
     );

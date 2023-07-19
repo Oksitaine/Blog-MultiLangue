@@ -5,6 +5,7 @@ import PostlistProps from "@/components/post/post-lists";
 import CTACard from "@/components/elements/cta-card";
 import directus from "../../../lib/directus";
 import { notFound } from "next/navigation";
+import getDictionary from "../../../lib/getDictionary";
 
 export default async function Home({params} : {params: {lang: string}}) {  
 
@@ -44,6 +45,8 @@ export default async function Home({params} : {params: {lang: string}}) {
     notFound()
   }
 
+  const dictionary = await getDictionary(params.lang)
+
   return (
     <PaddinContainer>
       <main className="h-auto pb-10 space-y-20 lg:space-y-10 lg:pb-0">
@@ -53,7 +56,7 @@ export default async function Home({params} : {params: {lang: string}}) {
           posts={posts.filter((_post, index) => index == 2 || index == 1)}
           layout="vertical"
         />
-        <CTACard local={params.lang} />
+        <CTACard dictionary={dictionary} />
         <PostCard local={params.lang} post={posts[0]} reverse={true} />
         <PostlistProps
           local={params.lang}

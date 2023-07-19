@@ -1,4 +1,4 @@
 {
-  "/robots.txt/route": "app/robots.txt/route.js",
-  "/[lang]/[category]/page": "app/[lang]/[category]/page.js"
+  "/[lang]/page": "app/[lang]/page.js",
+  "/[lang]/post/[slug]/page": "app/[lang]/post/[slug]/page.js"
 }

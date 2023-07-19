@@ -5,6 +5,7 @@ import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import getDictionary from '../../../lib/getDictionary'
 import siteConfig from '../../../config/site'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,21 +13,21 @@ type params = {
   lang: string
 }
 
-export const generateMetadata = async ({params : {lang}} : {params : {lang : string}}) : Promise<Metadata>=> {
+export const generateMetadata = async ({ params: { lang } }: { params: { lang: string } }): Promise<Metadata> => {
 
   const dictionary = await getDictionary(lang)
 
   return {
-    title : {
+    title: {
       template: siteConfig.site + " | %s",
       default: siteConfig.site
     },
     description: dictionary.MetaData.description,
     openGraph: {
-      title: siteConfig.site ,
+      title: siteConfig.site,
       description: dictionary.MetaData.description,
       url: process.env.NEXT_PUBLIC_SITE_URL,
-      siteName: siteConfig.site ,
+      siteName: siteConfig.site,
       images: [
         {
           url: `${process.env.NEXT_PUBLIC_SITE_URL}/opengraph-image.png`,
@@ -37,19 +38,22 @@ export const generateMetadata = async ({params : {lang}} : {params : {lang : str
       locale: lang,
       type: 'website'
     },
-    alternates:{
+    alternates: {
       canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/${lang}`,
       languages: {
         'en-US': `${process.env.NEXT_PUBLIC_SITE_URL}/en`,
         'fr-FR': `${process.env.NEXT_PUBLIC_SITE_URL}/fr`,
         'de-DE': `${process.env.NEXT_PUBLIC_SITE_URL}/de`,
       }
+    },
+    verification: {
+      google: "ByzV9I1TtuIm-bVSVZLqagbmDFEtoIztmoyh3qMtDzE"
     }
   }
 }
 
 export default function RootLayout({
-  children, 
+  children,
   params
 }: {
   children: React.ReactNode,
@@ -58,10 +62,18 @@ export default function RootLayout({
 
   return (
     <html lang={params.lang}>
+      <Script strategy='afterInteractive' src="https://www.googletagmanager.com/gtag/js?id=G-NNC2LET1TL"></Script>
+      <Script id="google-analystics">
+        {`window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-NNC2LET1TL');`}
+      </Script>
       <body className={inter.className}>
         <Navigation local={params.lang} />
         <div className='pt-10 min-h-[calc(100vh-300px)]' >
-          {children}  
+          {children}
         </div>
         <Footer local={params.lang} />
       </body>

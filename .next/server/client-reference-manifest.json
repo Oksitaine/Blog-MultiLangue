@@ -88,6 +88,22 @@
         "async": false
       }
     },
+    "(app-client)/./src/components/elements/cta-card.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/components/elements/cta-card.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/script.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/script.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
     "(app-client)/./src/components/navigation/lang-switcher.tsx": {
       "*": {
         "id": "(sc_client)/./src/components/navigation/lang-switcher.tsx",
@@ -331,6 +347,30 @@
       ],
       "async": false
     },
+    "/Users/wglint/Desktop/NextJS/my-app/src/components/elements/cta-card.tsx": {
+      "id": "(app-client)/./src/components/elements/cta-card.tsx",
+      "name": "*",
+      "chunks": [
+        "app/[lang]/page:static/chunks/app/[lang]/page.js"
+      ],
+      "async": false
+    },
+    "/Users/wglint/Desktop/NextJS/my-app/node_modules/next/dist/client/script.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/script.js",
+      "name": "*",
+      "chunks": [
+        "app/[lang]/layout:static/chunks/app/[lang]/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/wglint/Desktop/NextJS/my-app/node_modules/next/dist/esm/client/script.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/script.js",
+      "name": "*",
+      "chunks": [
+        "app/[lang]/layout:static/chunks/app/[lang]/layout.js"
+      ],
+      "async": false
+    },
     "/Users/wglint/Desktop/NextJS/my-app/src/components/navigation/lang-switcher.tsx": {
       "id": "(app-client)/./src/components/navigation/lang-switcher.tsx",
       "name": "*",
@@ -349,6 +389,10 @@
     }
   },
   "entryCSSFiles": {
+    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/not-found": {
+      "modules": [],
+      "files": []
+    },
     "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/layout": {
       "modules": [
         "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/globals.css",
@@ -357,10 +401,6 @@
       "files": [
         "static/css/app/[lang]/layout.css"
       ]
-    },
-    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/not-found": {
-      "modules": [],
-      "files": []
     },
     "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/[category]/page": {
       "modules": [],
