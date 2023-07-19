@@ -6,6 +6,7 @@ import { Inter } from 'next/font/google'
 import getDictionary from '../../../lib/getDictionary'
 import siteConfig from '../../../config/site'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -70,12 +71,14 @@ export default function RootLayout({
 
         gtag('config', 'G-NNC2LET1TL');`}
       </Script>
+      <Script data-no-cookie strategy='afterInteractive' src="https://cdn.splitbee.io/sb.js"></Script>
       <body className={inter.className}>
         <Navigation local={params.lang} />
         <div className='pt-10 min-h-[calc(100vh-300px)]' >
           {children}
         </div>
         <Footer local={params.lang} />
+        <Analytics />
       </body>
     </html>
   )
