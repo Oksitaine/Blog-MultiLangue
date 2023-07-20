@@ -24,6 +24,7 @@ export default function PostCard({post, layout = "horizontal", reverse = false, 
                 }
             `}>
                 <Image 
+                    priority
                     className={`rounded-md w-full object-cover object-center max-h-[300px] h-full ${ reverse ? "md:order-last" : "" } `} 
                     src={`${process.env.NEXT_PUBLIC_ASSETS_URL}${post.image}?key=optimised`} 
                     width={600} 
