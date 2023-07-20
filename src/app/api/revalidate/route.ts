@@ -19,4 +19,5 @@ export async function GET(request: NextRequest){
         revalidate : "Suuces ! All website is revalidate",
         now : new Date()
     })
+    
 }

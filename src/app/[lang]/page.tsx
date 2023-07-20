@@ -1,11 +1,19 @@
 import PaddinContainer from "@/components/layouts/padding-container";
 import PostCard from "@/components/post/post-card";
-import { DUMMY_DATA } from "../../../DUMMY_DATA";
 import PostlistProps from "@/components/post/post-lists";
 import CTACard from "@/components/elements/cta-card";
 import directus from "../../../lib/directus";
 import { notFound } from "next/navigation";
 import getDictionary from "../../../lib/getDictionary";
+import i83n from "../../../i83n.config";
+
+export const generateStaticParams = async () => {
+  return i83n.locales.map((lang) => {
+    return {
+      lang
+    }
+  })
+}
 
 export default async function Home({params} : {params: {lang: string}}) {  
 
