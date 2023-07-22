@@ -73,10 +73,7 @@ export default function RootLayout({
       </Script>
       <Script data-no-cookie strategy='afterInteractive' src="https://cdn.splitbee.io/sb.js"></Script>
       <body className={inter.className}>
-        <Navigation local={params.lang} />
-        <div className='pt-10 min-h-[calc(100vh-300px)]' >
-          {children}
-        </div>
+        {children}
         <Footer local={params.lang} />
         <Analytics />
       </body>

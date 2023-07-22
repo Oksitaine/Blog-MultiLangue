@@ -4,6 +4,7 @@ import directus from "../../../lib/directus";
 import { revalidateTag } from "next/cache";
 import getDictionary from "../../../lib/getDictionary";
 import { FormEvent, useState } from "react";
+import { z } from "zod"
 
 export default function CTACard({ dictionary }: { dictionary: any }) {
 
@@ -82,7 +83,7 @@ export default function CTACard({ dictionary }: { dictionary: any }) {
         >
           <input
             name="email"
-            type="email"
+            
             value={email}
             onChange={(e) => setemail(e.target.value)}
             placeholder={`${dictionary.ctaCard.placeholder}`}

@@ -6,6 +6,7 @@ import directus from "../../../../lib/directus";
 import { notFound } from "next/navigation";
 import { cache } from "react";
 import { Metadata } from "next";
+import Navigation from "@/components/navigation/navigation";
 
 type params = {
     category: string;
@@ -100,6 +101,8 @@ export default async function Page({params} : {params: params}) {
     }
 
     return (
+        <>
+        <Navigation local={params.lang} />
         <PaddinContainer>
             <div className="mb-10">
                 <h1 className="text-4xl font-semibold" >{typeCategory?.title}</h1>
@@ -107,6 +110,7 @@ export default async function Page({params} : {params: params}) {
             </div>
             <PostlistProps local={params.lang} posts={typeCategory.posts} />
         </PaddinContainer>
+        </>
     );
 }
 

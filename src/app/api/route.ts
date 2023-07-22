@@ -31,7 +31,7 @@ export async function GET(request: NextRequest){
                 {
                     from: "WGlint <onboarding@resend.dev>",
                     to: [email.email],
-                    subject: "Hello world 1",
+                    subject: "Hello world",
                     react: Welcome({Pseudo: name})
                 }
             )

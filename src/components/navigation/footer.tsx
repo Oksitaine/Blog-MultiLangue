@@ -1,17 +1,17 @@
 import Link from "next/link";
 import siteConfig from "../../../config/site";
-import PaddinContainer from "../layouts/padding-container";
 import SocialLink from "../elements/social-link";
 import { socialMedia } from "../../../DUMMY_DATA";
 import { SocialMedia } from "../../../types/collextion";
 import getDictionary from "../../../lib/getDictionary";
+import PaddinNavFot from "../layouts/padding-navfoter";
 
 export default async function Footer({local} : {local : string}) {
 
     const dictionary = await getDictionary(local)
 
     return <div className="py-8 border-t mt-10">
-        <PaddinContainer>
+        <PaddinNavFot>
             <div>
                 <h2 className="text-3xl font-bold">
                     {siteConfig.siteName}
@@ -46,6 +46,6 @@ export default async function Footer({local} : {local : string}) {
                     {dictionary.footer.creatorText} <Link href="https://twitter.com/Azdinmediri">@Azdinmediri</Link>
                 </div>
             </div>
-        </PaddinContainer>
+        </PaddinNavFot>
     </div>
 }

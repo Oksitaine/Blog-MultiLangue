@@ -19,7 +19,7 @@ export const Welcome = ({
     return (
         <Html>
             <Head />
-            <Preview>You can see my new WGlint BLOG</Preview>
+            <Preview>You can see my new BLOG</Preview>
             <Body>
                 <Tailwind
                     config={{

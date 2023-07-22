@@ -6,6 +6,7 @@ import directus from "../../../lib/directus";
 import { notFound } from "next/navigation";
 import getDictionary from "../../../lib/getDictionary";
 import i83n from "../../../i83n.config";
+import Navigation from "@/components/navigation/navigation";
 
 export const generateStaticParams = async () => {
   return i83n.locales.map((lang) => {
@@ -56,6 +57,8 @@ export default async function Home({params} : {params: {lang: string}}) {
   const dictionary = await getDictionary(params.lang)
 
   return (
+    <>
+    <Navigation local={params.lang} />
     <PaddinContainer>
       <main className="h-auto pb-10 space-y-20 lg:space-y-10 lg:pb-0">
         <PostCard local={params.lang} post={posts[3]} />
@@ -73,5 +76,6 @@ export default async function Home({params} : {params: {lang: string}}) {
         />
       </main>
     </PaddinContainer>
+    </>
   )
 }

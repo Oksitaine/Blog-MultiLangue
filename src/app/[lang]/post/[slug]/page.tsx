@@ -12,6 +12,7 @@ import { Metadata } from "next";
 import { Article, TechArticle, WithContext } from "schema-dts";
 import siteConfig from "../../../../../config/site";
 import getDictionary from "../../../../../lib/getDictionary";
+import Navigation from "@/components/navigation/navigation";
 
 export const generateStaticParams = async () => {
     try {
@@ -109,8 +110,11 @@ export default async function Page({ params }: {
     }
 
     const dictionary = await getDictionary(params.lang)
+    
 
     return (
+        <>
+        <Navigation local={params.lang} isPost color={post.category.title === "Business" ? "bg-emerald-500" : "bg-indigo-500"} />
         <PaddinContainer>
             <script
                 type="application/ld+json"
@@ -134,6 +138,7 @@ export default async function Page({ params }: {
                 <CTACard dictionary={dictionary} />
             </div>
         </PaddinContainer>
+        </>
     );
 }
 
