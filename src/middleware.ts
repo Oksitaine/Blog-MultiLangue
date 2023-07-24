@@ -23,13 +23,20 @@ export default function middleware(request: NextRequest) {
   const pathnameIsMissingLocale = i83n.locales.every(
     (locale: string) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
-
-  if (pathnameIsMissingLocale) {
-    const locale = getLocale(request);
-
-    return NextResponse.redirect(
-      new URL(`/${locale}`, request.url)
-    );
+  try {    
+    if (pathnameIsMissingLocale) {
+      const locale = getLocale(request);
+  
+      return NextResponse.redirect(
+        new URL(`/${locale}`, request.url)
+      );
+    }
+  } catch (error) {
+    if(pathnameIsMissingLocale){
+      return NextResponse.redirect(
+        new URL(`/en`, request.url)
+      );
+    }
   }
 }
 

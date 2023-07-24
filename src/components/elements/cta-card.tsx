@@ -5,6 +5,7 @@ import { revalidateTag } from "next/cache";
 import getDictionary from "../../../lib/getDictionary";
 import { FormEvent, useState } from "react";
 import { z } from "zod"
+import splitbee from "@splitbee/web";
 
 export default function CTACard({ dictionary }: { dictionary: any }) {
 
@@ -44,16 +45,22 @@ export default function CTACard({ dictionary }: { dictionary: any }) {
   const submitHandler = async (e : FormEvent) => {
     e.preventDefault()
     setisHandling(true)
+    splitbee.track("Click CTA")
     try {
-      console.log('Voici le mail : ' + email);
-      
+      console.log('Click in CTA');
       await directus.items("subscribers").createOne({
         email
       })
       setisHandling(false)
       setemail("")
+      splitbee.track("After CTA", {
+        sucess: "Email Send"
+      })
     } catch (error) {
       setisHandling(false)
+      splitbee.track("After CTA", {
+        error: "Error in Email send"
+      })
       console.log(error);
     }
   }

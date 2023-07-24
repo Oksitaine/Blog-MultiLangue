@@ -1,3 +1,5 @@
 {
-  "/[lang]/post/[slug]/page": "app/[lang]/post/[slug]/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/[lang]/page": "app/[lang]/page.js",
+  "/[lang]/[category]/page": "app/[lang]/[category]/page.js"
 }
