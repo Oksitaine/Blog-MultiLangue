@@ -23,6 +23,7 @@ export default function middleware(request: NextRequest) {
   const pathnameIsMissingLocale = i83n.locales.every(
     (locale: string) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
+
   try {    
     if (pathnameIsMissingLocale) {
       const locale = getLocale(request);

@@ -88,6 +88,14 @@
         "async": false
       }
     },
+    "(app-client)/./src/components/elements/cta-card.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/components/elements/cta-card.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
     "(app-client)/./src/components/navigation/lang-switcher.tsx": {
       "*": {
         "id": "(sc_client)/./src/components/navigation/lang-switcher.tsx",
@@ -123,14 +131,6 @@
     "(app-client)/./node_modules/@vercel/analytics/dist/react/index.js": {
       "*": {
         "id": "(sc_client)/./node_modules/@vercel/analytics/dist/react/index.js",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
-    "(app-client)/./src/components/elements/cta-card.tsx": {
-      "*": {
-        "id": "(sc_client)/./src/components/elements/cta-card.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -363,6 +363,14 @@
       ],
       "async": false
     },
+    "/Users/wglint/Desktop/NextJS/my-app/src/components/elements/cta-card.tsx": {
+      "id": "(app-client)/./src/components/elements/cta-card.tsx",
+      "name": "*",
+      "chunks": [
+        "app/[lang]/post/[slug]/page:static/chunks/app/[lang]/post/[slug]/page.js"
+      ],
+      "async": false
+    },
     "/Users/wglint/Desktop/NextJS/my-app/src/components/navigation/lang-switcher.tsx": {
       "id": "(app-client)/./src/components/navigation/lang-switcher.tsx",
       "name": "*",
@@ -410,17 +418,13 @@
         "app/[lang]/layout:static/chunks/app/[lang]/layout.js"
       ],
       "async": false
-    },
-    "/Users/wglint/Desktop/NextJS/my-app/src/components/elements/cta-card.tsx": {
-      "id": "(app-client)/./src/components/elements/cta-card.tsx",
-      "name": "*",
-      "chunks": [
-        "app/[lang]/post/[slug]/page:static/chunks/app/[lang]/post/[slug]/page.js"
-      ],
-      "async": false
     }
   },
   "entryCSSFiles": {
+    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/page": {
+      "modules": [],
+      "files": []
+    },
     "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/layout": {
       "modules": [
         "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/globals.css",
@@ -434,19 +438,15 @@
       "modules": [],
       "files": []
     },
-    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/page": {
-      "modules": [],
-      "files": []
-    },
-    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/[category]/not-found": {
-      "modules": [],
-      "files": []
-    },
     "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/post/[slug]/not-found": {
       "modules": [],
       "files": []
     },
     "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/[category]/page": {
+      "modules": [],
+      "files": []
+    },
+    "/Users/wglint/Desktop/NextJS/my-app/src/app/[lang]/[category]/not-found": {
       "modules": [],
       "files": []
     },
