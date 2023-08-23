@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 
 const dictionaries = {
     en: () => import("./../dictionoaries/en.json").then((module) => module.default),
